@@ -1,0 +1,12 @@
+﻿import iap.commander.ICommander;
+
+interface iap.app.extentions.sequences.IAnimationStep {
+	function defineStep(extentionName:String, command:String, args:Array, event:String);
+	function execute(commander:ICommander):ICommander;
+	
+	function verifyEvent(evt:Object):Boolean;
+	function getEvent():String;
+	function getCommander(commander:ICommander):ICommander;
+	function getCustomeCommander():ICommander;
+	function setCustomeCommander(val:ICommander);
+}

@@ -1,0 +1,15 @@
+﻿/**
+* extention for intializing the flash vars
+* 
+* @author      I.A.P Itzik Arzoni (itzikiap@gmail.com)
+*/
+class iap.app.extentions.configuration.InitVars extends iap.services.Service {
+	function init(flashVarsArr:Array) {
+		for (var o:String in flashVarsArr) {
+			var value:String = _root[flashVarsArr[o]];
+			value = (value == undefined)? "": value;
+			__commander["_params"].setParam("configuration_"+flashVarsArr[o], value);
+			__commander["_params"].registerGlobalParam("configuration_"+flashVarsArr[o]);
+		}
+	}
+}
